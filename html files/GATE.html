@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gate</title>
+</head>
+<body>
+    <button id="color"> click to change color</button>
+
+    <script>
+        
+        const doc = document.getElementById("color");
+        const colors = ["blue","red","brown","green","purple","black","gray","black","yellow","orange"]
+        doc.addEventListener("click", ()=> {
+           const ind = Math.random().toFixed(1)*10;
+           document.body.style.backgroundColor = colors[ind];
+           console.log(ind);
+        }
+        )
+    </script>
+</body>
+</html>

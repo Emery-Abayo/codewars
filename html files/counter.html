@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Countdown</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body class="flex flex-col items-center gap-4 min-h-screen justify-center bg-slate-50">
+    <h1 class="bg-gradient-to-r from-blue-600 to-green-500 bg-clip-text text-transparent text-lg font-bold tracking-wider">
+        SIMPLE COUNTDOWN
+    </h1>
+    <div id="timer" class="font-bold text-5xl bg-gradient-to-r from-blue-600 to-green-500 bg-clip-text text-transparent transition-all">
+        10
+    </div>
+    <div id="buttons" class="flex gap-2">
+        <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition cursor-pointer" onclick="addTime(5)">+5s</button>
+        <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition cursor-pointer" onclick="addTime(10)">+10s</button>
+        <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition cursor-pointer" onclick="addTime(30)">+30s</button>
+    </div>
+    <button id="resetBtn" class="hidden bg-emerald-500 text-white px-6 py-2 rounded hover:bg-emerald-600 transition cursor-pointer" onclick="resetTimer()">
+        Restart
+    </button>
+    <script>
+        let timeLeft = 10;
+        let timerInterval = null;
+        const timer = document.getElementById("timer");
+        const buttons = document.getElementById("buttons");
+        const resetBtn = document.getElementById("resetBtn");
+
+        function updateDisplay() {
+            timer.textContent = timeLeft;
+            
+            if (timeLeft > 0) {
+                buttons.classList.remove("hidden");
+                resetBtn.classList.add("hidden");
+            } else {
+                buttons.classList.add("hidden");
+                resetBtn.classList.remove("hidden");
+                stopTimer();
+            }
+        }
+
+        function startTimer() {
+            if (timerInterval) clearInterval(timerInterval);
+            
+            timerInterval = setInterval(() => {
+                timeLeft--;
+                updateDisplay();
+            }, 1000);
+        }
+
+        function stopTimer() {
+            if (timerInterval) {
+                clearInterval(timerInterval);
+                timerInterval = null;
+            }
+        }
+
+        function addTime(seconds) {
+            timeLeft += seconds;
+            updateDisplay();
+            if (timeLeft > 0 && !timerInterval) {
+                startTimer();
+            }
+        }
+
+        function resetTimer() {
+            stopTimer();
+            timeLeft = 10;
+            updateDisplay();
+            startTimer();
+        }
+
+        // Start the timer immediately
+        updateDisplay();
+        startTimer();
+    </script>
+</body>
+</html>

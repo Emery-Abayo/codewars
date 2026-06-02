@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta tags for character encoding and viewport settings -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Page title shown in browser tab -->
+    <title>My First Webpage</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-50">
+    <!-- Header section -->
+    <header class="bg-blue-600 text-white py-8 px-4">
+        <div class="max-w-4xl mx-auto">
+            <h1 class="text-4xl font-bold mb-2">Welcome to My Website</h1>
+            <p class="text-xl opacity-90">This is a subheading or tagline</p>
+        </div>
+    </header>
+
+    <!-- Navigation menu -->
+    <nav class="bg-blue-700 text-white sticky top-0">
+        <div class="max-w-4xl mx-auto px-4 py-4">
+            <ul class="flex space-x-6">
+                <li><a href="#home" class="hover:text-blue-200 transition">Home</a></li>
+                <li><a href="#about" class="hover:text-blue-200 transition">About</a></li>
+                <li><a href="#contact" class="hover:text-blue-200 transition">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main content section -->
+    <main class="max-w-4xl mx-auto py-12 px-4">
+        <section id="about" class="mb-12">
+            <h2 class="text-3xl font-bold text-gray-800 mb-4">About Section</h2>
+            <p class="text-gray-600 leading-relaxed">This is a paragraph of content. You can include as much text as you need here. Tailwind makes styling easier with utility classes!</p>
+        </section>
+
+        <section id="content" class="mb-12">
+            <h2 class="text-3xl font-bold text-gray-800 mb-4">Another Section</h2>
+            <p class="text-gray-600 mb-6 leading-relaxed">Here's another section with some information.</p>
+            
+            <!-- Example of an image -->
+            <img src="image.jpg" alt="Description of image" class="w-full rounded-lg shadow-md mb-6">
+            
+            <!-- Example of a list -->
+            <ul class="space-y-2 mb-6 text-gray-700">
+                <li class="flex items-center">
+                    <span class="text-blue-600 font-bold mr-3">•</span> Item 1
+                </li>
+                <li class="flex items-center">
+                    <span class="text-blue-600 font-bold mr-3">•</span> Item 2
+                </li>
+                <li class="flex items-center">
+                    <span class="text-blue-600 font-bold mr-3">•</span> Item 3
+                </li>
+            </ul>
+        </section>
+
+        <!-- Example of a form -->
+        <section id="contact" class="bg-white p-8 rounded-lg shadow-md">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6">Contact Form</h2>
+            <div class="space-y-4">
+                <input 
+                    type="text" 
+                    placeholder="Enter your name"
+                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                >
+                <input 
+                    type="email" 
+                    placeholder="Enter your email"
+                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                >
+                <button class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg transition duration-200">
+                    Submit
+                </button>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer section -->
+    <footer class="bg-gray-800 text-white py-6 mt-12">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <p>&copy; 2024 My Website. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript file (optional) -->
+    <script src="script.js"></script>
+    
+    <!-- Or inline JavaScript (optional) -->
+    <script>
+        console.log("Page loaded successfully!");
+    </script>
+</body>
+</html>
